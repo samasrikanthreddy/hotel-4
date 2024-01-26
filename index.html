@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <img src="data:image/png;base64,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" class="food-munch-logo" />
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav ml-auto">
+                    <a class="nav-link active" id="navItem1" href="#wcuSection">
+                        Home
+                        <span class="sr-only">(current)</span>
+                    </a>
+                    <a class="nav-link" href="#exploreMenuSection" id="navItem2">About</a>
+                    <a class="nav-link" href="#deliveryPaymentSection" id="navItem3">Service</a>
+                    <a class="nav-link" href="#followUsSection" id="navItem4">Clients</a>
+                    <a class="nav-link" href="#followUsSection" id="navItem4">Works</a>
+                    <a class="nav-link" href="#followUsSection" id="navItem4">Contact</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div class="banner-section-bg-container d-flex justify-content-center flex-column">
+        <div class="text-center">
+            <h1 class="banner-heading mb-3">JUSTGETIT</h1>
+            <p class="banner-caption mb-4">Most Relaxing Place</p>
+            <button class="custom-button">TAKE A TOUR</button>
+            <button class="custom-outline-button">Book Now</button>
+        </div>
+    </div>
+    <div>
+        <video
+        src="video1.mp4"
+        autoplay
+        muted
+        style="width: 100vw; height: 200vh"
+      ></video>
+      </div> 
+    <div class="wcu-section pt-5 pb-5" id="wcuSection">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h1 class="wcu-section-heading">ROOMS</h1>
+                    <p class="wcu-section-description">
+                        Bed(s): The primary purpose such as a single bed, double bed, queen-sized bed, or king-sized bed.
+
+                        Furniture: Hotel rooms typically include essential
+                        furniture such as a bedside table, a writing desk, chairs, and sometimes a sofa
+
+                        Bathroom: Most hotel rooms hav
+                        e an attached private bathroom. The bathroom usually includes a toi\
+                        let, sink, and a shower or bathtub. Higher-end hotels may provide
+                        additional amenities such as l
+                        uxury toiletries, bathrobes, and slippers.
+
+                    </p>
+                </div>
+                
+                <div>
+                    <video
+                    src="video2.mp4"
+                    autoplay
+                    muted
+                    style="width: 100vw; height: 200vh"
+                  ></video>
+                  </div>
+                
+                <div class="col-12 col-md-4">
+                    <div class="wcu-card p-3 mb-3">
+
+                        <img src="https://images.pexels.com/photos/271624/pexels-photo-271624.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Room 1" class="room-image">
+
+                        <h1 class="wcu-card-title mt-3">Room Service</h1>
+                        <p class="wcu-card-description">
+                            Room service is a hotel amenity that allows guests to order food, beverages, and
+                            other services to be delivered to their hotel room rather than dining in the hotel's
+                            restaurant or going out. It provides convenience and comfort, especially for travelers wh
+                            o prefer
+
+                        </p>
+                    </div>
+                </div>
+                <div class="col-12 col-md-4">
+                    <div class="wcu-card p-3 mb-3">
+                        <img src="https://images.pexels.com/photos/3201919/pexels-photo-3201919.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Room 3" class="room-image">
+
+
+                        <h1 class="wcu-card-title mt-3">Fresh rooms</h1>
+                        <p class="wcu-card-description">
+                            The Fresh Food group provides fresh-cut fruits and vegetables
+                            directly picked from our partner farms and farm houses so that
+                            you always get them tree to plate.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-12 col-md-4">
+                    <div class="wcu-card p-3 mb-3">
+                        <img src="https://images.pexels.com/photos/945688/pexels-photo-945688.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Room 4" class="room-image">
+
+
+                        <h1 class="wcu-card-title mt-3">Beds </h1>
+                        <p class="wcu-card-description">
+                            we are using very expensive beds for them
+                            <span class="offers">free </span>
+                            we are motive is customer satisfaction
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="explore-menu-section pt-5 pb-5" id="exploreMenuSection">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h1 class="menu-section-heading">wibes good </h1>
+                </div>
+                <div class="col-12 col-md-6 col-lg-3">
+                    <div class="shadow menu-item-card p-3 mb-3">
+                        <img src="https://images.pexels.com/photos/3754594/pexels-photo-3754594.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Room 5" class="room-image">
+
+                        <h1 class="menu-card-title">heathy atmosphere</h1>
+                        <a href="" class="menu-item-link">
+                            View All
+                            <svg width="16px" height="16px" viewBox="0 0 16 16" class="bi bi-arrow-right-short" fill="#d0b200" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-3">
+                    <div class="shadow menu-item-card p-3 mb-3">
+                        <img src="https://media.istockphoto.com/id/1144682183/photo/interior-of-a-double-bed-hotel-bedroom.jpg?s=1024x1024&w=is&k=20&c=Ygj5G0AzMB4jTQS0rSDe0gLmicbeBoQrg3Z2shTC6QU=" alt="Room 6" class="room-image">
+
+                        <h1 class="menu-card-title">fgh</h1>
+                        <a href="" class="menu-item-link">
+                            View All
+                            <svg width="16px" height="16px" viewBox="0 0 16 16" class="bi bi-arrow-right" fill="#d0b200" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-3">
+                    <div class="menu-item-card shadow p-3 mb-3">
+                        <img src=" https://images.pexels.com/photos/261102/pexels-photo-261102.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1  " alt="Room 6" class="room-image">
+
+                        <h1 class="menu-card-title">101</h1>
+                        <a href="" class="menu-item-link">
+                            View All
+                            <svg width="16px" height="16px" viewBox="0 0 16 16" class="bi bi-arrow-right" fill="#d0b200" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-3">
+                    <div class="menu-item-card shadow p-3 mb-3">
+                        <img src=" https://images.pexels.com/photos/347151/pexels-photo-347151.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1   " class="menu-item-image w-100" />
+                        <h1 class="menu-card-title">02</h1>
+                        <a href="" class="menu-item-link">
+                            View All
+                            <svg width="16px" height="16px" viewBox="0 0 16 16" class="bi bi-arrow-right" fill="#d0b200" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-3">
+                    <div class="menu-item-card shadow p-3 mb-3">
+
+                        <img src=" https://images.pexels.com/photos/161758/governor-s-mansion-montgomery-alabama-grand-staircase-161758.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1  " class="menu-item-image w-100" />
+                        <h1 class="menu-card-title">1013</h1>
+                        <a href="" class="menu-item-link">
+                            View All
+                            <svg width="16px" height="16px" viewBox="0 0 16 16" class="bi bi-arrow-right" fill="#d0b200" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-3">
+                    <div class="menu-item-card shadow p-3 mb-3">
+                        <img src=" https://images.pexels.com/photos/6876590/pexels-photo-6876590.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1  " class="menu-item-image w-100" />
+                        <h1 class="menu-card-title">104</h1>
+                        <a href="" class="menu-item-link">
+                            View All
+                            <svg width="16px" height="16px" viewBox="0 0 16 16" class="bi bi-arrow-right" fill="#d0b200" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-3">
+                    <div class="menu-item-card shadow p-3 mb-3">
+                        <img src="  https://images.pexels.com/photos/17001819/pexels-photo-17001819/free-photo-of-modern-interior-design-in-luxury-restaurant.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1    " class="menu-item-image w-100" />
+                        <h1 class="menu-card-title">204</h1>
+                        <a href="" class="menu-item-link">
+                            View All
+                            <svg width="16px" height="16px" viewBox="0 0 16 16" class="bi bi-arrow-right" fill="#d0b200" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/us7sCd7WCuY?rel=0" frameborder="0" allowfullscreen></iframe>
+
+                <div class="col-12 col-md-6 col-lg-3">
+                    <div class="menu-item-card shadow p-3 mb-3">
+                        <img src="  https://images.pexels.com/photos/7821350/pexels-photo-7821350.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load    " class="menu-item-image w-100" />
+                        <h1 class="menu-card-title">105</h1>
+                        <a href="" class="menu-item-link">
+                            View All
+                            <svg width="16px" height="16px" viewBox="0 0 16 16" class="bi bi-arrow-right" fill="#d0b200" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="healthy-food-section pt-5 pb-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-md-5">
+                    <div class="text-center">
+                        <img src=" https://images.pexels.com/photos/10491027/pexels-photo-10491027.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" class="healthy-food-section-img" />
+                    </div>
+                </div>
+                <div class="col-12 col-md-7">
+                    <h1 class="healthy-food-section-heading">
+                        Fresh, Healthy, Organic, Delicious Fruits
+                    </h1>
+                    <p class="healthy-food-section-description">
+                        Say no to harmful chemicals and go fully organic with our range of
+                        fresh fruits and veggies. Pamper your body and your senses with
+                        the true and unadulterated gifts from mother nature. with the true
+                        and unadulterated gifts from mother nature.
+                    </p>
+                        <a href="https://www.youtube.com/watch?v=us7sCd7WCuY" target="_blank">
+                        <a href="https://www.youtube.com/watch?v=us7sCd7WCuY" target="_blank">
+<video width="640" height="360" controls>
+  <source src="example.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+
+                    <button class="custom-button">Watch Video</button>
+                    <a/>
+                    <a/>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="delivery-and-payment-section pt-5 pb-5" id="deliveryPaymentSection">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-md-5 order-1 order-md-2">
+                    <div class="text-center">
+                        <img src="https://d1tgh8fmlzexmh.cloudfront.net/ccbp-responsive-website/delivery-payment-section-img.png" class="delivery-and-payment-section-img" />
+                    </div>
+                </div>
+                <div class="col-12 col-md-7 order-2 order-md-1">
+                    <h1 class="delivery-and-payment-section-heading">
+                        Delivery and Payment
+                    </h1>
+                    <p class="delivery-and-payment-section-description">
+                        Enjoy hassle-free payment with the plenitude of payment options
+                        available for you. Get live tracking and locate your food on a
+                        live map. It's quite a sight to see your food arrive to your door.
+                        Plus, you get a 5% discount on every order every time you pay
+                        online.
+                    </p>
+                    <button class="custom-button">Order Now</button>
+                    <div class="mt-3">
+                        <img src="https://d1tgh8fmlzexmh.cloudfront.net/ccbp-responsive-website/visa-card-img.png" class="payment-card-img" />
+                        <img src="https://d1tgh8fmlzexmh.cloudfront.net/ccbp-responsive-website/master-card-img.png" class="payment-card-img" />
+                        <img src="https://d1tgh8fmlzexmh.cloudfront.net/ccbp-responsive-website/paypal-card-img.png" class="payment-card-img" />
+                        <img src="https://d1tgh8fmlzexmh.cloudfront.net/ccbp-responsive-website/american-express-img.png" class="payment-card-img" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="thanking-customers-section pt-5 pb-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-md-7 d-flex flex-column justify-content-center">
+                    <h1 class="thanking-customers-section-heading">
+                        Thank you for being a valuable customer to us.
+                    </h1>
+                    <p class="thanking-customers-section-description">
+                        We have a surprise gift for you
+                    </p>
+                    <div class="d-md-none">
+                        <img src="https://d1tgh8fmlzexmh.cloudfront.net/ccbp-responsive-website/thanking-customers-section-img.png" class="thanking-customers-section-img" />
+                    </div>
+                    <div>
+                        <button class="custom-button">Redeem Gift</button>
+                    </div>
+                </div>
+                <div class="col-12 col-md-5 d-none d-md-block">
+                    <img src="https://d1tgh8fmlzexmh.cloudfront.net/ccbp-responsive-website/thanking-customers-section-img.png" class="thanking-customers-section-img" />
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="follow-us-section pt-5 pb-5" id="followUsSection">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h1 class="follow-us-section-heading">Follow Us</h1>
+                </div>
+                <div class="col-12">
+                    <div class="d-flex flex-row justify-content-center">
+                        <div class="follow-us-icon-container">
+                            <i class="fab fa-twitter icon"></i>
+                        </div>
+                        <div class="follow-us-icon-container">
+                            <i class="fab fa-instagram icon"></i>
+                        </div>
+                        <div class="follow-us-icon-container">
+                            <i class="fab fa-facebook icon"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer-section pt-5 pb-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <img src=" data:image/png;base64,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  " class="food-munch-logo" />
+                    <h1 class="footer-section-mail-id">orderfood@hostel.com</h1>
+                    <p class="footer-section-address">
+                        123 Ayur Vigyan Nagar, New Delhi, India.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
