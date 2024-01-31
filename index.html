@@ -2,6 +2,8 @@
 <html>
 
 <head>
+    <script src="https://kit.fontawesome.com/c96d830951.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
@@ -10,6 +12,7 @@
 </head>
 
 <body>
+    
     <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top">
         <div class="container">
             <a class="navbar-brand" href="#">
@@ -34,50 +37,74 @@
         </div>
     </nav>
     <div class="banner-section-bg-container d-flex justify-content-center flex-column">
+
         <div class="text-center">
-            <h1 class="banner-heading mb-3">JUSTGETIT</h1>
+           <h1 class="banner-heading mb-3">JUST LIVE AT IGNITE</h1>
             <p class="banner-caption mb-4">Most Relaxing Place</p>
             <button class="custom-button">TAKE A TOUR</button>
             <button class="custom-outline-button">Book Now</button>
         </div>
     </div>
-    <div>
-        <video
-        src="video1.mp4"
-        autoplay
-        muted
-        style="width: 100vw; height: 200vh"
-      ></video>
+   
+    <div class="wcu-section pt-5 pb-5" id="wcuSection">
+        <div class="row">
+            <div class="col-12">
+                <h1 class="wcu-section-description" id="address" onclick="toggleCityInformation()">Address</h1>
+                <div id="cityInfoDiv">
+                    <p>A. <span onclick="showCity('bangalore')">Bangalore</span></p>
+                    <p>B. <span onclick="showCity('mumbai')">Mumbai</span></p>
+                    <p>C. <span onclick="showCity('noida')">Noida</span></p>
+                </div>
+                <div id="bangalore" class="city-address" style="display: none;">
+                    #149, 1st Floor, 30th Main 18th Cross
+                    Beside Of NIFT Campus, HSR Layout, Sector 2,
+                    Bangalore South, Karnataka 560102
+                </div>
+                <div id="mumbai" class="city-address" style="display: none;">
+                    Urbano L, Lodha palava lakeshore green
+                    Dombivli, Thane, Maharashtra, India, 42120
+                </div>
+                <div id="noida" class="city-address" style="display: none;">
+                    P802, PAN OASIS, Pan Oasis Society, Sector 70,
+                    Noida, Uttar Pradesh 20130
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="icon">
+        <button id="playButton"><i class="fa fa-play" style="font-size:36px;"></i> </button>
+
+        <video id="videoPlayer" width="640" height="360" controls>
+           <i class="fa fa-play" style="font-size:36px;"></i> 
+          <source src="video1.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
       </div> 
+     
     <div class="wcu-section pt-5 pb-5" id="wcuSection">
         <div class="container">
             <div class="row">
                 <div class="col-12">
-                    <h1 class="wcu-section-heading">ROOMS</h1>
+                    <h1 class="wcu-section-heading">Address</h1>
                     <p class="wcu-section-description">
-                        Bed(s): The primary purpose such as a single bed, double bed, queen-sized bed, or king-sized bed.
-
-                        Furniture: Hotel rooms typically include essential
-                        furniture such as a bedside table, a writing desk, chairs, and sometimes a sofa
-
-                        Bathroom: Most hotel rooms hav
-                        e an attached private bathroom. The bathroom usually includes a toi\
-                        let, sink, and a shower or bathtub. Higher-end hotels may provide
-                        additional amenities such as l
-                        uxury toiletries, bathrobes, and slippers.
-
+                        
+                        MANTRI ELEGANCE Bannerghatta Main Rd, Stage 2, BTM Layout, Bengaluru, Karnataka 560076
+                        near Jaydeva Hospital
+                      
                     </p>
                 </div>
-                
-                <div>
+                <div><a href="video2.mp4" target="_blank" rel="noopener noreferrer">
+                    <img src="https://www.flaticon.com/free-icons/video" title="video icons" alt="Video Icon" />
+                  </a>
+
                     <video
-                    src="video2.mp4"
-                    autoplay
-                    muted
-                    style="width: 100vw; height: 200vh"
-                  ></video>
-                  </div>
-                
+                      src="video2.mp4"
+                      autoplay
+                      muted
+                      style="width: 100vw; height: 200vh"
+                    ></video>
+                    </div>
+                  
                 <div class="col-12 col-md-4">
                     <div class="wcu-card p-3 mb-3">
 
@@ -93,8 +120,11 @@
                         </p>
                     </div>
                 </div>
+                
+
                 <div class="col-12 col-md-4">
                     <div class="wcu-card p-3 mb-3">
+
                         <img src="https://images.pexels.com/photos/3201919/pexels-photo-3201919.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Room 3" class="room-image">
 
 
@@ -109,7 +139,7 @@
                 <div class="col-12 col-md-4">
                     <div class="wcu-card p-3 mb-3">
                         <img src="https://images.pexels.com/photos/945688/pexels-photo-945688.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Room 4" class="room-image">
-
+                        <div class="text-center">
 
                         <h1 class="wcu-card-title mt-3">Beds </h1>
                         <p class="wcu-card-description">
@@ -356,3 +386,44 @@
 </body>
 
 </html>
+<script>
+$(document).ready(function(){
+        $("#toggleAddress").click(function(){
+            $("#address1, #address2, #address3, #address4").toggleClass("hidden");
+        });
+    });
+
+
+
+    document.addEventListener('DOMContentLoaded', function () {
+  // Get references to the button and video elements
+  var playButton = document.getElementById('playButton');
+  var videoPlayer = document.getElementById('videoPlayer');
+
+  // Add click event listener to the button
+  playButton.addEventListener('click', function () {
+    // Check if the video is paused or ended, then play it
+    if (videoPlayer.paused || videoPlayer.ended) {
+      videoPlayer.play();
+     playButton.textContent = '  <i class="fa-solid fa-pause"></i> '; // Change button text to 'Pause'
+    } else {
+      videoPlayer.pause();
+     // playButton.textContent = '  <i class="fa-solid fa-play"></i> '; // Change button text to 'Play Video'
+    }
+  });
+});
+function toggleCityInformation() {
+        var cityInfoDiv = document.getElementById("cityInfoDiv");
+        cityInfoDiv.style.display = cityInfoDiv.style.display === "none" ? "block" : "none";
+    }
+
+    function showCity(city) {
+        var cityAddresses = document.getElementsByClassName("city-address");
+        for (var i = 0; i < cityAddresses.length; i++) {
+            cityAddresses[i].style.display = "none";
+        }
+
+        var selectedCity = document.getElementById(city);
+        selectedCity.style.display = "block";
+    }
+</script>
