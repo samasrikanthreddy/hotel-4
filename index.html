@@ -2,6 +2,7 @@
 <html>
 
 <head>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script> 
     <script src="https://kit.fontawesome.com/c96d830951.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
@@ -77,7 +78,7 @@
         <video id="videoPlayer" width="640" height="360" controls>
            <i class="fa fa-play" style="font-size:36px;"></i> 
           <source src="video1.mp4" type="video/mp4">
-          Your browser does not support the video tag.
+          You
         </video>
       </div> 
      
@@ -93,18 +94,16 @@
                       
                     </p>
                 </div>
-                <div><a href="video2.mp4" target="_blank" rel="noopener noreferrer">
-                    <img src="https://www.flaticon.com/free-icons/video" title="video icons" alt="Video Icon" />
-                  </a>
-
-                    <video
-                      src="video2.mp4"
-                      autoplay
-                      muted
-                      style="width: 100vw; height: 200vh"
-                    ></video>
+                <div class="icon2">
+                    <button id="playButton2"><i class="fa fa-play" style="font-size:36px;"></i> </button>
+            
+                    <video id="videoPlayer2" width="640" height="360" controls>
+                        <i class="fa fa-play" style="font-size:36px;"></i> 
+                       <source src="video2.mp4" type="video/mp4">
+                       You
+                     </video>
                     </div>
-                  
+                  </div>
                 <div class="col-12 col-md-4">
                     <div class="wcu-card p-3 mb-3">
 
@@ -397,33 +396,33 @@ $(document).ready(function(){
 
     document.addEventListener('DOMContentLoaded', function () {
   // Get references to the button and video elements
-  var playButton = document.getElementById('playButton');
-  var videoPlayer = document.getElementById('videoPlayer');
+ // var playButton = document.getElementById('playButton');
+  //var videoPlayer = document.getElementById('videoPlayer');
 
   // Add click event listener to the button
-  playButton.addEventListener('click', function () {
+  //playButton.addEventListener('click', function () {
     // Check if the video is paused or ended, then play it
-    if (videoPlayer.paused || videoPlayer.ended) {
-      videoPlayer.play();
-     playButton.textContent = '  <i class="fa-solid fa-pause"></i> '; // Change button text to 'Pause'
-    } else {
-      videoPlayer.pause();
+    //if (videoPlayer.paused || videoPlayer.ended) {
+      //videoPlayer.play();
+    // playButton.textContent = '  <i class="fa-solid fa-pause"></i> '; // Change button text to 'Pause'
+    //} else {
+      //videoPlayer.pause();
      // playButton.textContent = '  <i class="fa-solid fa-play"></i> '; // Change button text to 'Play Video'
-    }
-  });
-});
-function toggleCityInformation() {
-        var cityInfoDiv = document.getElementById("cityInfoDiv");
-        cityInfoDiv.style.display = cityInfoDiv.style.display === "none" ? "block" : "none";
-    }
+   // }
+//  });
+//});
 
-    function showCity(city) {
-        var cityAddresses = document.getElementsByClassName("city-address");
-        for (var i = 0; i < cityAddresses.length; i++) {
-            cityAddresses[i].style.display = "none";
-        }
+    var video = document.getElementById("videoPlayer2");
+  var playButton = document.getElementById("playButton2");
 
-        var selectedCity = document.getElementById(city);
-        selectedCity.style.display = "block";
+  function playPause() {
+    if (video.paused) {
+      video.play();
+      playButton.innerHTML = '<i class="fa fa-pause" style="font-size:36px;"></i>';
+    } else {
+      video.pause();
+      playButton.innerHTML = '<i class="fa fa-play" style="font-size:36px;"></i>';
     }
+  }
+
 </script>
